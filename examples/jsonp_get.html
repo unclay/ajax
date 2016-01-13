@@ -1,0 +1,26 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset='utf-8'>
+		<title></title>
+		<script src="../index.js"></script>
+	</head>
+	<body>
+		<script>
+			var i = 1;
+			var qq = setInterval(function(){
+				ajax.getJsonp('http://api.home.com/test/message', {
+					appid: 123,
+					mediaid: 123
+				}, function(data){
+						console.log('ok:', data);
+					}, function(data){
+						console.log('faile:', data);
+					});
+				i++;
+				if( i >=1 ) clearInterval(qq);
+			}, 1000);
+			
+		</script>
+	</body>
+</html>
